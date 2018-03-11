@@ -1,0 +1,124 @@
+
+iprange分流方式的策略样例：
+```
+{
+"divtype":"iprange",
+"divdata":[
+{"range":{"start":1111, "end":2222}, "upstream":"beta1"},
+{"range":{"start":3333, "end":4444}, "upstream":"beta2"},
+{"range":{"start":5555, "end":6666}, "upstream":"beta1"},
+{"range":{"start":7777, "end":2130706439}, "upstream":"beta3"}]
+}
+```
+
+
+uidrange分流方式的策略样例：
+```
+{
+"divtype":"uidrange",
+"divdata":[
+{"range":{"start":1111, "end":2222}, "upstream":"beta1"},
+{"range":{"start":3333, "end":4444}, "upstream":"beta2"},
+{"range":{"start":5555, "end":6666}, "upstream":"beta1"},
+{"range":{"start":7777, "end":1661638660}, "upstream":"beta3"}]
+}
+```
+
+uidsuffix分流方式的策略样例：
+```
+{
+"divtype":"uidsuffix",
+"divdata":[
+{"suffix":"1", "upstream":"beta1"},
+{"suffix":"3", "upstream":"beta2"},
+{"suffix":"5", "upstream":"beta1"},
+{"suffix":"0", "upstream":"beta3"}]
+}
+```
+
+uidappoint分流方式的策略样例：
+```
+{
+"divtype":"uidappoint",
+"divdata":[
+{"uidset":["1143321","43214321","324124"], "upstream":"beta1"},
+{"uidset":["34321","324213", "234321"], "upstream":"beta2"},
+{"uidset":["245245","4325","5324","542"], "upstream":"beta1"},
+{"uidset":["546","563","656", "1661638660"], "upstream":"beta3"}]
+}
+```
+
+arg_city分流schema:
+```
+{
+  "divtype": "arg_city",
+  "divdata": [
+    {
+      "city": "BJ",
+      "upstream": "beta1"
+    },
+    {
+      "city": "HN",
+      "upstream": "beta2"
+    },
+    {
+      "city": "SH",
+      "upstream": "beta3"
+    },
+    {
+      "city": "CQ",
+      "upstream": "beta3"
+    }
+  ]
+}
+```
+
+countryCode分流schema:
+```
+{
+  "divtype": "request_body_countryCode",
+  "divdata": [
+    {
+      "countryCode": "SG",
+      "upstream": "ofo_global_base_api#dayangzhou"
+    },
+    {
+      "countryCode": "JP",
+      "upstream": "ofo_global_base_api#dayangzhou"
+    },
+    {
+      "countryCode": "MY",
+      "upstream": "ofo_global_base_api#dayangzhou"
+    },
+    {
+      "countryCode": "TH",
+      "upstream": "ofo_global_base_api#dayangzhou"
+    },
+    {
+      "countryCode": "KR",
+      "upstream": "ofo_global_base_api#dayangzhou"
+    },
+    {
+      "countryCode": "AU",
+      "upstream": "ofo_global_base_api#dayangzhou"
+    },
+    {
+      "countryCode": "US",
+      "upstream": "ofo_global_base_api#beimeizhou"
+    },
+    {
+      "countryCode": "GB",
+      "upstream": "ofo_global_base_api#ouzhou"
+    },
+    {
+      "countryCode": "ES",
+      "upstream": "ofo_global_base_api#ouzhou"
+    },
+    {
+      "countryCode": "OTHER",
+      "upstream": "ofo_global_base_api#ouzhou"
+    }
+  ]
+}
+```
+

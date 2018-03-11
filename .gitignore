@@ -1,0 +1,13 @@
+*~
+*.o
+*.swp
+*.swo
+*.log
+*.pid
+*.out
+*.rdb
+*temp/
+*_temp/
+*.pyc
+stdout
+*.so
